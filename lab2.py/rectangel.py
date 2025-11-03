@@ -34,7 +34,10 @@ class Rectangle: # creat rec. class
     def __gt__(self, other): #great than c.o 
         return self.area > other.area 
     
-    # translation method, i will use this method to move the r.
+    # translation method, i will use this method to move the r. through the axes x,y
     def translate(self,dx , dy ):
         self.dx = dx 
         self.dy = dy 
+
+
+
