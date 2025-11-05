@@ -24,3 +24,11 @@ class rectangle(Shape):
     @property
     def center(self):
         return(self._x + self._width/2, self._y + self._heigth/2)
+
+
+    
+    def __reper__(self):
+        return f"rectangle {self._x},{self._y},{self._width},{self.heigth})"
+   
+    def __str__(self):
+        return f"rectangle (width ={self._width},heigth {self.heigth}, area ={self.area:2f}., perimeter {self.perimeter:2f}))"

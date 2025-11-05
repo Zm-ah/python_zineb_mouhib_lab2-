@@ -5,11 +5,8 @@ class Circle(Shape):
         super().__init__(x, y)       
         if radius <= 0:
             raise ValueError("Radius must be posotive")
-        self.radius = radius 
-        self._x = x 
-        self._y = y 
-   
-
+        self._radius = radius 
+        
     @property 
     def area(self):
         return math.pi * self.radius**2 
@@ -18,13 +15,18 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius 
     
-    @property 
+    @property  
     def radius(self):
-        return self.radius 
+        return self._radius 
     
-    @property 
-    def center(self):
-        return (self._x, self._y)
+    @radius.setter 
+    def radius(self, value ):
+        if value <= 0:
+            raise ValueError(" Radius must be positive")
+        self._radius = value         
     
-    def __reper__(self):
+    def __repr__(self):
         return f"Circle(radius={self._radius}),center= ({self._x},{self._y})"
+   
+    def __str__(self):
+        return (f"Circle(center= ({self._x},{self._y}), radius  ={self.radius} , area ={self.area:2f}, perimeter {self.perimeter:2f})")
