@@ -5,19 +5,16 @@ class Shapes:  # creating a class with a center(x,y) and radius from the center 
      # read-only    
     @property 
     def area (self):
-        return  
+       pass  
 
     @property 
     def parimeter(self):
-        return  
-    @property
+        pass  
+    
     def translate( self, dx , dy ):
         self.x += dx
         self.y += dy 
 
-    @property 
-    def center(self):
-        return(self.x, self.y)   
 
   # creating functions with som comparison operator 
 
@@ -37,4 +34,3 @@ class Shapes:  # creating a class with a center(x,y) and radius from the center 
         return self.area > other.area 
     
 
-    
