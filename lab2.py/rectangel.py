@@ -14,9 +14,9 @@ class Rectangle: # creat rec. class
     def perimeter(self):
         return 2 * (self.width * self.height) 
      
-    #@property 
-    #def center(self):
-     #   return(self.x, self.y)
+    @property 
+    def center(self):
+        return(self.x, self.y)
     
      
     def __eq__(self, other): # equale to  c.o 

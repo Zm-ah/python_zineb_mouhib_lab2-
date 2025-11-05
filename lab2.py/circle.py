@@ -16,6 +16,11 @@ class Circle:  # creating a class with a center(x,y) and radius from the center 
         self.x += dx
         self.y += dy 
 
+
+    @property 
+    def center(self):
+        return(self.x, self.y)   
+
     def center(self):
         return(self.x , self.y )
 
