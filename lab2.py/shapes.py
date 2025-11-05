@@ -1,28 +1,23 @@
-class Circle:  # creating a class with a center(x,y) and radius from the center to the parameter. 
-    def __init__(self, radius,  x = 0 , y = 0  ):
-        self.radius = radius
+class Shapes:  # creating a class with a center(x,y) and radius from the center to the parameter. 
+    def __init__(self,  x = 0 , y = 0  ):
         self.x = x  # the coordinate of the center 
         self.y = y # the second cordinate of the center 
-        
+     # read-only    
     @property 
     def area (self):
-        return pi * self.radius**2 
+        return  
 
     @property 
     def parimeter(self):
-        return 2 * pi * delf.radius 
-
+        return  
+    @property
     def translate( self, dx , dy ):
         self.x += dx
         self.y += dy 
 
-
     @property 
     def center(self):
         return(self.x, self.y)   
-
-    def center(self):
-        return(self.x , self.y )
 
   # creating functions with som comparison operator 
 
@@ -42,3 +37,4 @@ class Circle:  # creating a class with a center(x,y) and radius from the center 
         return self.area > other.area 
     
 
+    
