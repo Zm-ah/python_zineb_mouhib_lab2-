@@ -1,4 +1,4 @@
-class Shapes:  # creating a class with a center(x,y) and radius from the center to the parameter. 
+class Shapes:  # creating a class shape, the blue print for the othar classes 
     def __init__(self,  x = 0 , y = 0  ):
         self.x = x  # the coordinate of the center 
         self.y = y # the second cordinate of the center 
