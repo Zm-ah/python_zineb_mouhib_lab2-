@@ -1,11 +1,13 @@
 from shape import Shape 
 import math
 class Circle(Shape):
-    def __init__(self, x = 0, y = 0 , radius = 3):
+    def __init__(self, x = 0, y = 0 ,radius = 3):
         super().__init__(x, y)       
         if radius <= 0:
             raise ValueError("Radius must be posotive")
         self.radius = radius 
+        self._x = x 
+        self._y = y 
    
 
     @property 
