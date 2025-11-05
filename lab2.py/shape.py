@@ -31,8 +31,8 @@ class Shape:  # creating a class shape, the blue print for the othar classes
         return self._perimeter
     
     def translate( self, dx , dy ):
-        self.x += dx
-        self.y += dy 
+        self._x += dx
+        self._y += dy 
 
 
   # creating functions with som comparison operator 

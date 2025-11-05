@@ -1,15 +1,11 @@
 from shape import Shape
 class rectangle(Shape):
     def __init__(self,width, heigth, x, y ):
-        self.width = width 
-        self.heigth =  heigth 
         super().__init__(x ,y )
-
-
         if width <= 0 or heigth <= 0:            
             raise ValueError(" the width and the heigth most be positive")
-            self.width = width 
-            self.heigth = heigt
+        self.width = width 
+        self.heigth =  heigth     
 
     # dubbel kolla med att làgga privat underskor med làraren imorgon 
     @property 
