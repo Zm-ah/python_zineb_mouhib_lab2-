@@ -6,7 +6,7 @@ class Rectangle(Shape):
         super().__init__(x, y)
         
         if not isinstance( width , Number) or not isinstance(heigth , Number):
-            raise TypeError(" ---- The parameter must be positiv!---- ")
+            raise TypeError(" ---- You must type a number ---- ")
         if width <= 0 or heigth <= 0:            
             raise ValueError(" ---- The width and the heigth must be positive ----")
         self._width = width 
@@ -49,8 +49,8 @@ class Rectangle(Shape):
     
 
 
-    def __str__(self):
-        return f"rectangle {self._x},{self._y},{self._width},{self.heigth})"
-   
     def __repr__(self):
-        return f"rectangle (width ={self._width},heigth = {self.heigth}, area ={self.area:2f}., perimeter= {self.perimeter:2f}))"
+        return f"Rectangle (x = {self._x}, y = {self._y},width = {self._width}, heigth = {self.heigth})"
+   
+    def __str__(self):
+        return f"Rectangle ( area ={self.area:2f}., perimeter= {self.perimeter:2f} )"

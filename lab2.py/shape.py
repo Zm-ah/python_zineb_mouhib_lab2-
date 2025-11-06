@@ -19,6 +19,10 @@ class Shape:  # creating a class shape, the blue print for the othar classes
         return self._y
 
     def translate(self, dx, dy):
+        if isinstance( dx, bool) or isinstance(dy, bool ):
+            raise TypeError(" ---- The value cannot be a boolean ---- ")
+        if not isinstance( dx ,Number ) or not isinstance(dy,Number):
+            raise TypeError(" ---- The value must be a number ---- ")
         self._x += dx
         self._y += dy
 
