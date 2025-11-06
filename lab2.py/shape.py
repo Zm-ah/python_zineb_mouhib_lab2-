@@ -22,7 +22,7 @@ class Shape:  # creating a class shape, the blue print for the othar classes
         self._x += dx
         self._y += dy
 
-    # creating functions with som comparison operator
+    # creating functions with som comparison operator for the X and Y 
 
     def __eq__(self, other):  # equale to  c.o
         return (self._x == other._x) and (self._y == other ._y)

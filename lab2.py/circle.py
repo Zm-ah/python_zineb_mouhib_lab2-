@@ -1,12 +1,16 @@
 from shape import Shape
+from numbers import Number 
 import math
-
 
 class Circle(Shape):
     def __init__(self, x=0, y=0, radius=3):
         super().__init__(x, y)
+        if not isinstance(radius, Number):
+            raise TypeError( "You must type numbers")
+         
         if radius <= 0:
             raise ValueError("Radius must be posotive")
+        
         self._radius = radius
 
     @property
@@ -23,7 +27,9 @@ class Circle(Shape):
 
     @radius.setter
     def radius(self, value):
-        if value <= 0:
+        if not isinstance(value, Number):
+            raise TypeError( "you must type numbers")
+        elif value <= 0:
             raise ValueError(" Radius must be positive")
         self._radius = value
 
@@ -46,8 +52,8 @@ class Circle(Shape):
         return self.area > other.area
     
 
-    def __repr__(self):
-        return f"Circle(radius={self._radius}),center= ({self._x},{self._y})"
-
     def __str__(self):
-        return f"Circle(center= ({self._x},{self._y}), radius  ={self.radius} , area ={self.area:2f}, perimeter {self.perimeter:2f})"
+        return f"Circle(radius={self._radius}),center = ({self._x},{self._y})"
+
+    def __repr__(self):
+        return f"Circle(center= ({self._x},{self._y}), radius = {self.radius} , area = {self.area:2f}, perimeter = {self.perimeter:2f})"
