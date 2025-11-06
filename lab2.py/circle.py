@@ -37,7 +37,7 @@ class Circle(Shape):
         self._radius = value
 
     def unit_circle(self)->bool:
-        return self._x == 0 , self._y == 0, self._radius == 1 
+        return self._x == 0 and self._y == 0 and self._radius == 1 
         
 
 

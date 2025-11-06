@@ -8,7 +8,7 @@ class Shape:  # creating a class shape, the blue print for the othar classes
 
         self._x = x  # the coordinate of the center
         self._y = y  # the second cordinate of the center
-
+    
     # getter
     @property
     def x(self):
