@@ -36,9 +36,13 @@ class Circle(Shape):
             raise ValueError(" Radius must be positive")
         self._radius = value
 
+    def unit_circle(self)->bool:
+        return self._x == 0 , self._y == 0, self._radius == 1 
+        
 
-        # creating functions with som comparison operator
 
+     # creating functions with som comparison operator
+   
     def __eq__(self, other):  # equale to  c.o
         return self.area == other.area
 
@@ -56,7 +60,7 @@ class Circle(Shape):
     
 
     def __repr__(self):
-        return f"Circle(x = {self.x}, y = {self.y} , radius={self._radius}))"
+        return f"Circle(x = {self.x}, y = {self.y} , radius={self._radius})"
 
     def __str__(self):
         return f"Circle(center= ({self._x},{self._y}), radius = {self.radius} , area = {self.area:2f}, perimeter = {self.perimeter:2f})"
