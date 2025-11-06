@@ -25,16 +25,16 @@ class Shape:  # creating a class shape, the blue print for the othar classes
     # creating functions with som comparison operator for the X and Y 
 
     def __eq__(self, other):  # equale to  c.o
-        return (self._x == other._x) and (self._y == other ._y)
+        return (self.x == other.x) and (self.y == other .y)
 
     def __le__(self, other):  # less than or equale to  c.o
-        return (self._x <= other._x) and (self._y <= other._y)
+        return (self.x <= other.x) and (self.y <= other.y)
 
     def __ge__(self, other):  # greater than or equale to c.o
-        return (self._x >= other._x) and (self._y >= other._x)
+        return (self.x >= other.x) and (self.y >= other.x)
 
     def __lt__(self, other):  # less than c.o
-        return (self._x < other._x) and (self._y < other._y)
+        return (self.x < other.x) and (self.y < other.y)
 
     def __gt__(self, other):  # great than c.o
-        return (self._x > other._x) and (self._y > other._y)
+        return (self.x > other.x) and (self.y > other.y)

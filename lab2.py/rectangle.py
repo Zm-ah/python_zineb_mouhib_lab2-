@@ -4,6 +4,7 @@ from numbers import Number
 class Rectangle(Shape):
     def __init__(self, x= 0 ,y= 0 , width = 2 ,heigth = 2):
         super().__init__(x, y)
+        
         if not isinstance( width , Number) or not isinstance(heigth , Number):
             raise TypeError(" ---- The parameter must be positiv!---- ")
         if width <= 0 or heigth <= 0:            

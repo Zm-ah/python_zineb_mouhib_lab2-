@@ -4,10 +4,11 @@ import math
 
 class Circle(Shape):
     def __init__(self, x=0, y=0, radius=3):
-        super().__init__(x, y)
+        super().__init__(x, y) 
+        if isinstance(radius, bool):
+            raise TypeError (" The radius cannot be boolien")
         if not isinstance(radius, Number):
             raise TypeError( "You must type numbers")
-         
         if radius <= 0:
             raise ValueError("Radius must be posotive")
         
@@ -27,6 +28,8 @@ class Circle(Shape):
 
     @radius.setter
     def radius(self, value):
+        if value is bool:
+            raise ValueError (" The radius must be a number")
         if not isinstance(value, Number):
             raise TypeError( "you must type numbers")
         elif value <= 0:
@@ -52,8 +55,8 @@ class Circle(Shape):
         return self.area > other.area
     
 
-    def __str__(self):
-        return f"Circle(radius={self._radius}),center = ({self._x},{self._y})"
-
     def __repr__(self):
+        return f"Circle(x = {self.x}, y = {self.y} , radius={self._radius}))"
+
+    def __str__(self):
         return f"Circle(center= ({self._x},{self._y}), radius = {self.radius} , area = {self.area:2f}, perimeter = {self.perimeter:2f})"
