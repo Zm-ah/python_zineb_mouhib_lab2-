@@ -1,6 +1,6 @@
 from shape import Shape
-class rectangle(Shape):
-    def __init__(self,width, heigth, x, y ):
+class Rectangle(Shape):
+    def __init__(self,x, y , width, heigth,):
         super().__init__(x ,y )
         if width <= 0 or heigth <= 0:            
             raise ValueError(" the width and the heigth must be positive")
@@ -17,16 +17,16 @@ class rectangle(Shape):
     # dubbel kolla med att làgga privat underskor med làraren imorgon 
     @property 
     def area(self):
-        return self.width * self.height 
+        return self._width * self._height 
     @property 
     def perimeter(self):
-        return 2 * (self.width + self.height)
+        return 2 * (self._width + self._height)
     @property
     def center(self):
         return(self._x + self._width/2, self._y + self._heigth/2)
 
 
-    
+
     def __reper__(self):
         return f"rectangle {self._x},{self._y},{self._width},{self.heigth})"
    
