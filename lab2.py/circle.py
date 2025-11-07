@@ -2,17 +2,17 @@ from shape import Shape
 from numbers import Number 
 import math
 
-class Circle(Shape):
-    def __init__(self, x=0, y=0, radius=3):
-        super().__init__(x, y) 
-        if isinstance(radius, bool):
+class Circle(Shape): # creating class Circle with inherits from shape
+    def __init__(self, x=0, y=0, radius=3):# the cunstructure for the circle 
+        super().__init__(x, y) # calling for the constructions from shape class 
+        if isinstance(radius, bool): # validating 
             raise TypeError (" The radius cannot be boolien")
         if not isinstance(radius, Number):
             raise TypeError( "You must type numbers")
         if radius <= 0:
             raise ValueError("Radius must be posotive")
         
-        self._radius = radius
+        self._radius = radius  # save the value in the objekt 
 
     @property
     def area(self):
@@ -26,19 +26,23 @@ class Circle(Shape):
     def radius(self):
         return self._radius
 
-    @radius.setter
-    def radius(self, value):
-        if value is bool:
-            raise ValueError (" The radius must be a number")
-        if not isinstance(value, Number):
+    @radius.setter  
+    def radius(self, value): # function that take value and validating it 
+        if isinstance ( value, bool): # validating for bolien  
+            raise TypeError(" The radius must be a number")
+        if not isinstance(value, Number): # validating for numeric value 
             raise TypeError( "you must type numbers")
-        elif value <= 0:
+        elif value <= 0: # vaidating for a positiv number 
             raise ValueError(" Radius must be positive")
-        self._radius = value
-
-    def unit_circle(self)->bool:
-        return self._x == 0 and self._y == 0 and self._radius == 1 
         
+        self._radius = value # save the value in the objekt 
+
+    def unit_circle(self)->bool: # function that givs a bool when the circle is unit circle. 
+        return self._x == 0 and self._y == 0 and self.radius == 1 
+    
+    @property
+    def center(self):
+        return(self._x , self._y) # function tha givs the center of   
 
 
      # creating functions with som comparison operator
@@ -59,8 +63,8 @@ class Circle(Shape):
         return self.area > other.area
     
 
-    def __repr__(self):
+    def __repr__(self):# return string representation of the Circle objekt. 
         return f"Circle(x = {self.x}, y = {self.y} , radius={self._radius})"
 
-    def __str__(self):
-        return f"Circle(center= ({self._x},{self._y}), radius = {self.radius} , area = {self.area:2f}, perimeter = {self.perimeter:2f})"
+    def __str__(self):# return the area and perimeter of the circle   
+        return f"Circle(center= ({self._x},{self._y}), radius = {self.radius} , area = {self.area:.2f}, perimeter = {self.perimeter:.2f})"

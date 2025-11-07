@@ -1,34 +1,34 @@
 from shape import Shape
 from numbers import Number
 
-class Rectangle(Shape):
-    def __init__(self, x= 0 ,y= 0 , width = 2 ,heigth = 2):
-        super().__init__(x, y)
+class Rectangle(Shape): # creating class R. with inherits from shape. 
+    def __init__(self, x= 0 ,y= 0 , width = 2 ,height = 2): # the constructure 
+        super().__init__(x, y) #  calling the constructure from the shape class. 
         
-        if not isinstance( width , Number) or not isinstance(heigth , Number):
+        if not isinstance( width , Number) or not isinstance(height , Number):  # validating parameters and make sure they are Numbers. 
             raise TypeError(" ---- You must type a number ---- ")
-        if width <= 0 or heigth <= 0:            
+        if width <= 0 or height <= 0:            
             raise ValueError(" ---- The width and the heigth must be positive ----")
-        self._width = width 
-        self._heigth =  heigth     
+        self._width = width   # save the atribute value internally in the objects  
+        self._height =  height    
 
-
-    @property
+              
+    @property  # som property functions 
     def width(self):
         return self._width 
     @property
-    def heigth(self):
-        return self._heigth 
-    # dubbel kolla med att làgga privat underskor med làraren imorgon 
+    def height(self):
+        return self._height 
+    
     @property 
     def area(self):
-        return self._width * self._heigth 
+        return self._width * self._height
     @property 
     def perimeter(self):
-        return 2 * (self._width + self._heigth)
+        return 2 * (self._width + self._height)
     @property
     def center(self):
-        return(self._x + self._width/2, self._y + self._heigth/2)
+        return(self._x + self._width/2, self._y + self._height/2)
     
 
 
@@ -49,8 +49,8 @@ class Rectangle(Shape):
     
 
 
-    def __repr__(self):
-        return f"Rectangle (x = {self._x}, y = {self._y},width = {self._width}, heigth = {self.heigth})"
+    def __repr__(self): # return string representation of the Rectangle objekt. 
+        return f"Rectangle (x = {self._x}, y = {self._y},width = {self.width}, height = {self.height})"
    
-    def __str__(self):
-        return f"Rectangle ( area ={self.area:2f}., perimeter= {self.perimeter:2f} )"
+    def __str__(self): # return the area and perimeter of the rectangle 
+        return f"Rectangle ( area ={self.area:.2f}., perimeter= {self.perimeter:.2f} )"
