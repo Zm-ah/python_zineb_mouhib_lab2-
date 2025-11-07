@@ -35,7 +35,7 @@ class Shape:  # creating a class shape, the blue print for the othar classes
         return (self.x <= other.x) and (self.y <= other.y)
 
     def __ge__(self, other):  # greater than or equale to c.o
-        return (self.x >= other.x) and (self.y >= other.x)
+        return (self.x >= other.x) and (self.y >= other.y)
 
     def __lt__(self, other):  # less than c.o
         return (self.x < other.x) and (self.y < other.y)
