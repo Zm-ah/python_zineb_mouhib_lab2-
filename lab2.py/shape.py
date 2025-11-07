@@ -5,8 +5,9 @@ class Shape:  # creating a class shape, the blue print for the othar classes
     def __init__(self, x=0, y=0):
         if not isinstance(x, Number) or not isinstance(y, Number): # the parameter have to be numbers, and then I'm raisen an error value to evoid typing erro in case we write a string or a boolean. 
             raise TypeError("x and y must be numeric values")
-
-        self._x = x  # save the atribute value internally in the objects 
+         
+        # save the atribute value internally in the objects 
+        self._x = x 
         self._y = y  
     
     # getter
@@ -18,8 +19,8 @@ class Shape:  # creating a class shape, the blue print for the othar classes
     def y(self):
         return self._y # function that give the value of _y 
 
-    def translate(self, dx, dy):
-        if isinstance( dx, bool) or isinstance(dy, bool ):
+    def translate(self, dx, dy): # This giv oss the posibility to move the shapes on x and y 
+        if isinstance( dx, bool) or isinstance(dy, bool ): # som validations for eventual error 
             raise TypeError(" ---- The value cannot be a boolean ---- ")
         if not isinstance( dx ,Number ) or not isinstance(dy,Number):
             raise TypeError(" ---- The value must be a number ---- ")

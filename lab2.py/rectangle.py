@@ -53,4 +53,4 @@ class Rectangle(Shape): # creating class R. with inherits from shape.
         return f"Rectangle (x = {self._x}, y = {self._y},width = {self.width}, height = {self.height})"
    
     def __str__(self): # return the area and perimeter of the rectangle 
-        return f"Rectangle ( area ={self.area:.2f}., perimeter= {self.perimeter:.2f} )"
+        return f"Rectangle ( center= ({self._x},{self._y}), area ={self.area:.2f}., perimeter= {self.perimeter:.2f} )"
